@@ -5,7 +5,7 @@
 Scenario: Add items to the ToDoApp - Firefox
 	Given I navigate to LambdaTest App on following environment
 		| Browser  | BrowserVersion   | OS   |
-		| <Broser> | <BrowserVersion> | <OS> |
+		| <Browser> | <BrowserVersion> | <OS> |
 	And I select the first item
 	And I select the second item
 	And I enter the new value in textbox

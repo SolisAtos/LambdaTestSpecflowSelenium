@@ -116,7 +116,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "BrowserVersion",
                             "OS"});
                 table2.AddRow(new string[] {
-                            "<Broser>",
+                            string.Format("{0}", browser),
                             string.Format("{0}", browserVersion),
                             string.Format("{0}", oS)});
 #line 6
