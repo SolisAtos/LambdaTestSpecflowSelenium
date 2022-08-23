@@ -20,22 +20,23 @@ namespace LambdaTestSpecflowSelenium.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.9.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("NonChromeBrowser")]
-    public partial class NonChromeBrowserFeature
+    [NUnit.Framework.DescriptionAttribute("ShowcaseGridSessions")]
+    public partial class ShowcaseGridSessionsFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "NonChromeBrowser - Copy.feature"
+#line 1 "ShowcaseGridSessions.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "NonChromeBrowser", "\tTesting Non chrome browsers", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "ShowcaseGridSessions", "Performs a long list of actions so that we can showcase the sessions feature in s" +
+                    "elenium grid", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -74,10 +75,12 @@ namespace LambdaTestSpecflowSelenium.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add items to the ToDoApp - Firefox")]
+        [NUnit.Framework.DescriptionAttribute("Test many options in the To Do App")]
         [NUnit.Framework.CategoryAttribute("ToDoApp")]
+        [NUnit.Framework.TestCaseAttribute("Chrome", "84.0", "Windows 10", null)]
         [NUnit.Framework.TestCaseAttribute("Firefox", "84.0", "Windows 10", null)]
-        public virtual void AddItemsToTheToDoApp_Firefox(string browser, string browserVersion, string oS, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("MicrosoftEdge", "84.0", "Windows 10", null)]
+        public virtual void TestManyOptionsInTheToDoApp(string browser, string browserVersion, string oS, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "ToDoApp"};
@@ -90,8 +93,8 @@ namespace LambdaTestSpecflowSelenium.Features
             argumentsOfScenario.Add("Browser", browser);
             argumentsOfScenario.Add("BrowserVersion", browserVersion);
             argumentsOfScenario.Add("OS", oS);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add items to the ToDoApp - Firefox", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 5
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Test many options in the To Do App", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -111,30 +114,48 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "Browser",
                             "BrowserVersion",
                             "OS"});
-                table2.AddRow(new string[] {
+                table4.AddRow(new string[] {
                             string.Format("{0}", browser),
                             string.Format("{0}", browserVersion),
                             string.Format("{0}", oS)});
-#line 6
- testRunner.Given("I navigate to LambdaTest App on following environment", ((string)(null)), table2, "Given ");
-#line hidden
-#line 9
- testRunner.And("I select the first item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 7
+ testRunner.Given("I navigate to LambdaTest App on following environment", ((string)(null)), table4, "Given ");
 #line hidden
 #line 10
- testRunner.And("I select the second item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I wait for 10 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 11
- testRunner.And("I enter the new value in textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I select the first item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
- testRunner.When("I click the Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I wait for 3 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
+ testRunner.And("I select the second item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+ testRunner.And("I wait for 3 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+ testRunner.And("I select the third item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 16
+ testRunner.And("I wait for 3 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 17
+ testRunner.And("I enter the new value in textbox", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 18
+ testRunner.And("I wait for 3 seconds", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 19
+ testRunner.When("I click the Submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 20
  testRunner.Then("I verify whether the item is added to the list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

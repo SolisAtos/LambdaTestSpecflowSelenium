@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="Features\FirefoxBrowser - Copy.feature.cs" />
     <SpecFlowObsoleteCodeBehindFiles Remove="Features\NonChromeBrowser - Copy.feature.cs" />
   </ItemGroup>
 
@@ -27,7 +28,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <SpecFlowFeatureFiles Update="Features\NonChromeBrowser - Copy.feature">
+    <Compile Update="Features\EdgeBrowser.feature.cs">
+      <DependentUpon>EdgeBrowser.feature</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="Features\EdgeBrowser.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="Features\FirefoxBrowser.feature">
       <Visible>$(UsingMicrosoftNETSdk)</Visible>
       <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
     </SpecFlowFeatureFiles>

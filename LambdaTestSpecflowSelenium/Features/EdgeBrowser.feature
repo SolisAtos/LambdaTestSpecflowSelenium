@@ -1,8 +1,8 @@
-﻿Feature: NonChromeBrowser
+﻿Feature: EdgeBrowser
 	Testing Non chrome browsers
 
 @ToDoApp
-Scenario: Add items to the ToDoApp - Firefox
+Scenario: Add items to the ToDoApp - Edge
 	Given I navigate to LambdaTest App on following environment
 		| Browser  | BrowserVersion   | OS   |
 		| <Browser> | <BrowserVersion> | <OS> |
@@ -13,5 +13,5 @@ Scenario: Add items to the ToDoApp - Firefox
 	Then I verify whether the item is added to the list
 
 	Examples: 
-		| Browser | BrowserVersion | OS         |
-		| Firefox | 84.0           | Windows 10 |
+		| Browser       | BrowserVersion | OS         |
+		| MicrosoftEdge | 84.0           | Windows 10 |

@@ -1,4 +1,5 @@
 using LambdaTestSpecflowSelenium.Drivers;
+using LambdaTestSpecflowSelenium.Pages;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow.Assist;
@@ -10,6 +11,7 @@ namespace LambdaTestSpecflowSelenium.StepDefinitions
     {
         IWebDriver driver;
         private readonly ScenarioContext _scenarioContext;
+        ToDoAppMainPage toDoAppMainPage;
         public BrowserStepDefinitions(ScenarioContext scenarioContext)
         {
             _scenarioContext = scenarioContext;
@@ -24,38 +26,55 @@ namespace LambdaTestSpecflowSelenium.StepDefinitions
             driver = _scenarioContext.Get<SeleniumDriver>("SeleniumDriver").Setup((string)data.Browser);
 
             driver.Url = "https://lambdatest.github.io/sample-todo-app/";
+
+            toDoAppMainPage = new ToDoAppMainPage(driver);
         }
 
         [Given(@"I select the first item")]
         public void GivenISelectTheFirstItem()
         {
             // Click on first checkbox
-            driver.FindElement(By.Name("li1")).Click();
+            toDoAppMainPage.ClickFirstCheckBox();
         }
 
         [Given(@"I select the second item")]
         public void GivenISelectTeSecondItem()
         {
             // Click on second checkbox
-            driver.FindElement(By.Name("li2")).Click();
+            toDoAppMainPage.ClickSecondCheckBox();
         }
 
         [Given(@"I enter the new value in textbox")]
         public void GivenIEnterTheNewValueInTextbox()
         {
-            driver.FindElement(By.Id("sampletodotext")).SendKeys("Sample ToDo Text");
+            toDoAppMainPage.WriteToDoTextField("Sample ToDo Text");
         }
+
+        [Given(@"I wait for (.*) seconds")]
+        public void GivenIWaitForSeconds(int p0)
+        {
+            Thread.Sleep(p0*1000);
+        }
+
+        [Given(@"I select the third item")]
+        public void GivenISelectTheThirdItem()
+        {
+            // Click on third checkbox
+            toDoAppMainPage.ClickThirdCheckBox();
+        }
+
 
         [When(@"I click the Submit button")]
         public void WhenIClickTheSubmitButton()
         {
-            driver.FindElement(By.Id("addbutton")).Click();
+            toDoAppMainPage.ClickAddToDoButton();
         }
 
         [Then(@"I verify whether the item is added to the list")]
         public void ThenIVerifyWhetherTheItemIsAddedToTheList()
         {
-            Assert.That(driver.FindElement(By.XPath("/html/body/div/div/div/ul/li[6]/span")).Text, Is.EqualTo("Sample ToDo Text"));
+            String ActualText = toDoAppMainPage.GetNewElementText();
+            Assert.That(ActualText, Is.EqualTo("Sample ToDo Text"));
         }
 
     }
